@@ -24,10 +24,28 @@ source("Import_GSS2016_haven.R")
 # SEX
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
+```{r}
+source("makeTables2016.R")
+barchartGC(xsex_sex,type="percent")
+```
+
+Make Comments about male and females have opposing opinions 
+```{r}
+chisqtestGC(xsex_sex, graph=TRUE)
+```
+Reject The null hypothesis.
+
+```{r}
+rowPerc(xsex_sex)
+colPerc(xsex_sex)
+```
+
 
 #Polyviews
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+
+
 
 #Relationship status
 
