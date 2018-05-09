@@ -17,9 +17,11 @@ source("Import_GSS2016_haven.R")
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->   
 
-####This study deals with questions about possible relationships between views toward extramrital sex and sex, political views, and current relationship status. The data is from the 2016 general social survey.
+#Introduction
+This study deals with questions about possible relationships between views toward extramrital sex and sex, political views, and current relationship status. The data is from the 2016 general social survey. The three following data sets contain data collected on; sex & their views toward extramrital sex, relationship status & their views toward extramrital sex, and political prefrence and views toward extramrital sex. All subject were asked how they feel about extra martial sex, they were allowed to choose from its okay, on the fence(Hmmm), and no its not okay. We are intrested in finding out whether sex, relationship status, or poltical prefrence have a relationship between views toward sex outside of the relationship.
 
-
+#Methods
+In order to find out if there is a relationship in any of sex, relationship status, or political views, we will split up the study into three respective sections. Within the sections, a barchart will be constructed from the data collected to graphically view it and visualize if there is a relationship. For sex , we will compare how men and women feel in the three responses. For relationship status, we will see how hooked up people versus single people respond in the three categories. And for politcal prefrence we will see how liberals, moderates, and conservatives respond wiht the three responses. After the graphical test, we will conduct inferrential tests from each data set. A chi squared test will be used to test the relationship between the thee variables by getting a p value and comparing it to our threshold of acceptance (5%) for, sex, relationship status, and political prefrence and views toward sex outside the relationship. Our null hypothesis for each section in the study will be that there is a relationship between sex, relationship status, or political preference and views toward sex outside the relationship. After our inferrential test we will run a numerical test to better understand our data, row will allow us to compare percentages of how all people in the three responses voted, whereas collumn percents will allow us to compare the percentages of how: men vs women, single people vs hooked up people, and Liberal vs Moderate vs Conservative people voted. From our graphical results, inferrential results, and numerical results we will draw concusions in each section as to the relationship between views toward sex outside of the relationship and sex, political views, and current relationship status.
 
 # SEX
 
@@ -68,6 +70,7 @@ In this study we concluded that there is no relationship between sex and views o
 source("makeTables2016.R")
 barchartGC(xmsex_table,type="percent")
 ```
+
 After constructing the data into a barchart, it is shown that people who have a partner are opposed to sex outside of the relationship. The differences on opinions appear large in the opposed and on the fence: Mostly all the people who are in relationships beleive sex outside the relationship is wrong or are unsure, where as single people are less likely seem to belive its wrong and are not as unsure about it. Most single people tended to belive that sex outside the relationship is okay, and some people in relatipnships belive its okay--but not as much as they think its wrong or unsure about it. 
 
 ```{r}
@@ -101,3 +104,46 @@ After reviewing the data, it appears that both hooked up and single people are t
 
 In this section of the study, we set out to see the relationship between relationship status (Single or In a reltionship) and belief on having sex with someone outside the relationship. When we ran  barchart, we saw that more single people favored that sex outside the relationship is okay than people who were in a relationship, vice-versa--hooked up people were more likely to believe it is wrong than single people. After, an inferrential test was conducted to test the relationship between relationship status and belief,and conlcuded that there was NO relationship. Then, numerical test were ran to bettter understand, and it was shown that mostly all people in the study believe that sex outside of a relationship is wrong, a small portion are unure, and the smallest portions beleive its okay. To conlcude, there is no relationship between relatipnship status and belief on sex outside the relationship. Most people beleive it is wrong, not many people are on the fence, and a very small portion believe its okay--it appears to run analogous to what society beleives. 
 
+
+#Polyviews
+
+<!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
+```{r}
+source("makeTables2016.R")
+barchartGC(xsex_polv,type="percent")
+```
+After constructing of the data, it appears that all three political prefrences agree that it is wrong to have sex outside the relationship. However, it shows that liberal people are on the fence and are okay with sex outside the relatipnship than moderate people, and conservative people are were less likley than both groups to be on the fence and think it okay.
+
+
+```{r}
+chisqtestGC(xsex_polv, graph=TRUE)
+```
+Our p-value from the ChiSquared test is approxoimatley 0 (significatly low). This suggests that, under a true null hypothesis, we have about a 0 probablity of returning a sample like this. The p-value must surpass the threshold of 5%, in order to accept our null hypothesis as true, so we will reject the null hypothesis. Therefore, there is not a relationship between political prefrence and sex outsie the relationship. 
+
+
+We will examine the data in numerical form to get a better idea of how people voted, and what they belive. 
+```{r}
+rowPerc(xsex_polv)
+```
+For all the people who believe that sex outside the relationship is <b>wrong</b>, 25.55% were Liberal, 8.30% were Moderate, and 36.15% were Conservative.
+For all the people who are <b>unsure</B> about sex outside the relationship, 51.27% were Liberal, 33.54% were Moderate, and 15.19% were Conservative.
+For all the people who believe that sex outside the relationship is <b>okay</b>, 46% were Liberal, 34% were Moderate, and 20% were Conservative.
+
+After reviewing the data, it appears thar more moderates belive its wrong, followed by conservatives, then the liberal people. More Liberals were on the fence about it than the moderates, followed by the conservatives. Additionally, more Liberals thinks okay than moderates, followed by the conservatives.
+
+```{r}
+colPerc(xsex_polv)
+```
+For the people who are Liberal, 79.57% of them belive it is <b>wrong</b>, 15.91% of Liberal people are <b>unsure</b> about sex outside the relationship, and only 4.52% of them think that it is <b>okay</b>.
+For the people who are Moderate, 89.66% of them belive it is <b>wrong</b>, 7.83% of Moderate people are <b>unsure</b> about sex outside the relationship, and only 2.51% of them think that it is <b>okay</b>.
+For the people who are Conservative, 94.40% of them belive it is <b>wrong</b>, 3.95% of Conservative people are <b>unsure</b> about sex outside the relationship, and only 1.65% of them think that it is <b>okay</b>.
+
+After reviewing the numerical data, it appears that all people in the three political prefrences are similary split up in their belief on the three diffrent responses. However, the percentages of each political group are diffrent from eachother. A very large majority of Conservative people are likely to believe it is wrong, closley followed by Moderate people, and a smaller majority in the Liberals belive its wrong. All responses trended the same way with conservatives having a stonger view, than the moderates, and finally the liberal people.
+
+
+
+# Discussion and Conclusion
+
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+In this section of the study we set out to see if there was a relationship between political prefrence and belief on sex outside the relationship. When we ran a barchart we saw that all political prefrences mostly thought it was wrong, and saw that liberal people believe its okay. After we ran a chi-squared test and concluded that there is not a relationship between political prefrence and belief on sex outside the relationship. In order to understand better, we ran numerical tests and saw that everyone trended in the same way with conservatives having a stonger view, than the moderates, and finally the liberal people. To conclude, there is no relationship between political prefrence and belief on sex outside the relationship, however there are diffrent divisions in the way the different political prefrences feel about sex outside the relatipnship.
