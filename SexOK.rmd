@@ -59,4 +59,45 @@ In the group who think extra marital sex is <b>ok</b> 3.40% of ALL men think its
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-In this study we concluded that there is no relationship between sex and views on extra marital sex. In the process, we created a barchart to graphically map the data and see the relationship in the data. In the barchart, we saw that men and women differ in each category. After, we ran an inferrential test to determine if there is a relationhsip, we used the chisquared test. The test gave us a p-value of of about 3, so we rejected the null hypothesis, and concluded that there is no relationsip between sex and views on extra marital sex. Next, we created row perecents, to compare the percentages of how men and women voted in each category. Finally, we also created row percentages to see what did all the men vote for and all the women. 
+In this study we concluded that there is no relationship between sex and views on extra marital sex. In the process, we created a barchart to graphically map the data and see the relationship in the data. In the barchart, we saw that men and women differ in each category. After, we ran an inferrential test to determine if there is a relationhsip, we used the chisquared test. The test gave us a p-value of of about 3, so we rejected the null hypothesis, and concluded that there is no relationsip between sex and views on extra marital sex. Next, we created row perecents, to compare the percentages of how men and women voted in each category. Finally, we also created row percentages to see what did all the men vote for and all the women. In this study we concluded that there is no relationship between sex and views on extra marital sex. In the process, we created a barchart to graphically map the data and see the relationship in the data. In the barchart, we saw that men and women differ in each category. After, we ran an inferrential test to determine if there is a relationhsip, we used the chisquared test. The test gave us a p-value of of about 3, so we rejected the null hypothesis, and concluded that there is no relationsip between sex and views on extra marital sex. Next, we created row perecents, to compare the percentages of how men and women voted in each category. Finally, we also created row percentages to see what did all the men vote for and all the women. 
+
+
+#Relationship status
+
+```{r}
+source("makeTables2016.R")
+barchartGC(xmsex_table,type="percent")
+```
+After constructing the data into a barchart, it is shown that people who have a partner are opposed to sex outside of the relationship. The differences on opinions appear large in the opposed and on the fence: Mostly all the people who are in relationships beleive sex outside the relationship is wrong or are unsure, where as single people are less likely seem to belive its wrong and are not as unsure about it. Most single people tended to belive that sex outside the relationship is okay, and some people in relatipnships belive its okay--but not as much as they think its wrong or unsure about it. 
+
+```{r}
+chisqtestGC(xmsex_table, graph=TRUE)
+```
+
+Our p-value from the ChiSquared test is 0.006. This suggests that, under a true null hypothesis, we have about a .006% probablity of returning a sample like this. The p-value must surpass the threshold of 5%, in order to accept our null hypothesis as true, so we will reject the null hypothesis. Therefore, there is not a relationship between relationship status and belief on sex outside of the relationship.
+
+We will examine the data in numerical form to get a better idea of how people voted, and what they belive. 
+
+```{r}
+rowPerc(xmsex_table)
+```
+For all the people who believe that sex outside the relationship is <b>wrong</b>, 87.48% were Hooked up and 12.52% were single.
+For all the people who are <b>unsure</B> about sex outside the relationship, 81.69% were Hooked up and 18.31% were single. 
+For all the people who believe that sex outside the relationship is <b>okay</b>, 67.86% were Hooked up and 32.14% were single.
+
+After reviewing the data, it appears that people who are hooked up belive its wrong more than single people, and more single people believe it is okay then people who are hooked up. However, the big diffrences are attributable to the diffrence in population sizes in hooked up and single individuals.
+
+```{r}
+colPerc(xmsex_table)
+```
+For the people who are hooked up, 89.41% of them belive it is <b>wrong</b>, 7.98% of hooked up people are <b>unsure</b> about sex outside the relationship, and only 2.61% of them think that it is <b>okay</b>.
+For the people who are single, 80.87% of them belive it is <b>wrong</b>, 11.30% of hooked up people are <b>unsure</b> about sex outside the relationship, and only 7.83% of them think that it is <b>okay</b>.
+
+After reviewing the data, it appears that both hooked up and single people are trending to believe the same thing. The majority believe that sex outside of a relationship is wrong, a small portion are unure, and the smallest portions beleive its okay.
+
+# Discussion and Conclusion
+
+<!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variables causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+In this section of the study, we set out to see the relationship between relationship status (Single or In a reltionship) and belief on having sex with someone outside the relationship. When we ran  barchart, we saw that more single people favored that sex outside the relationship is okay than people who were in a relationship, vice-versa--hooked up people were more likely to believe it is wrong than single people. After, an inferrential test was conducted to test the relationship between relationship status and belief,and conlcuded that there was NO relationship. Then, numerical test were ran to bettter understand, and it was shown that mostly all people in the study believe that sex outside of a relationship is wrong, a small portion are unure, and the smallest portions beleive its okay. To conlcude, there is no relationship between relatipnship status and belief on sex outside the relationship. Most people beleive it is wrong, not many people are on the fence, and a very small portion believe its okay--it appears to run analogous to what society beleives. 
+
